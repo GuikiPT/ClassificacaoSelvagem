@@ -71,7 +71,7 @@ module.exports = {
 
             if (existingData) {
                 try {
-                    await updateStmt.run(points, wins, team, team, guildId, user.id);
+                    await updateStmt.run(points, wins, team, bonus, guildId, user.id);
                 }
                 catch (error) {
                     await hooker.commandErrorHooker(interaction.client, '/points', 'Inserting user points into database', error);
