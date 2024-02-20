@@ -34,7 +34,7 @@ module.exports = {
                 const leaderboardEmbed = new Discord.EmbedBuilder()
                     .setColor('Purple')
                     .setTitle('**Tabela de Classificação**')
-                    // .setURL('https://cbp2.guiki.pt')
+                    .setURL('https://pixelselvagem.guikipt.pt/')
                     .setThumbnail(interaction.client.user.displayAvatarURL({ size: 2048, format: 'png', dynamic: true }))
                     .setTimestamp()
                     .setFooter({ text: 'Pixelmon Selvagem', iconURL: interaction.client.user.displayAvatarURL({ format: 'png', size: 2048, dynamic: true }) })
@@ -115,11 +115,11 @@ module.exports = {
                 
                 const buttonURL = new Discord.ButtonBuilder()
                     .setLabel('LeaderBoard Online')
-                    .setURL('https://cbp2.guiki.pt')
+                    .setURL('https://pixelselvagem.guikipt.pt/')
                     .setStyle(Discord.ButtonStyle.Link)    
                 const row = new Discord.ActionRowBuilder()
                     .addComponents(buttonURL)
-                // await interaction.channel.send({ components: [row] });
+                await interaction.channel.send({ components: [row] });
             }
             catch (error) {
                 await hooker.commandErrorHooker(interaction.client, '/leaderboard', 'Sending Paginator', error);
