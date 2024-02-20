@@ -1,0 +1,41 @@
+{
+  "name": "classificacaoselvagembot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "deploy-slash": "node slash-deployer.js",
+    "docker-run": "npm install && npm run start",
+    "docker-start": "docker-compose up -d",
+    "docker-deploy-slash": "npm install && npm run deploy-slash"
+  },
+  "keywords": [
+    "Discord",
+    "Bot",
+    "Minecraft",
+    "Championship",
+    "Pixelmon"
+  ],
+  "author": "GuikiPT#0",
+  "license": "ISC",
+  "dependencies": {
+    "@devraelfreeze/discordjs-pagination": "^2.7.6",
+    "@pkmn/data": "^0.7.47",
+    "@pkmn/dex": "^0.7.47",
+    "@pkmn/smogon": "^0.3.3",
+    "axios": "^1.4.0",
+    "better-logging": "^5.0.0",
+    "better-sqlite3": "^8.5.0",
+    "cli-table": "^0.3.11",
+    "colornames": "^1.1.1",
+    "colors": "^1.4.0",
+    "discord.js": "^14.11.0",
+    "dotenv": "^16.3.1",
+    "fs": "^0.0.1-security",
+    "moment": "^2.29.4",
+    "mysql2": "^3.6.0",
+    "node-schedule": "^2.1.1",
+    "xlsx": "^0.18.5"
+  }
+}

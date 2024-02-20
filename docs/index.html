@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CBP-2</title>
+    <link rel="icon" type="image/png" href="https://cdn.discordapp.com/icons/997131979399123014/b301000abe1733a39cc741dc66b415e0.png">
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Campeonato Brasileiro de Pixelmon 2" />
+    <meta name="description" content="Tabela de Pontuação do Campeonato Brasileiro de Pixelmon 2" />
+    <meta name="keywords" content="Campeonato, Brasil, Pixelmon, Competitivo">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta name="author" content="GuikiPT">
+    <link rel="icon" type="image/png" href="https://cdn.discordapp.com/icons/997131979399123014/b301000abe1733a39cc741dc66b415e0.png">
+    <meta name="theme-color" content="#b004fb">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cbp2.guiki.pt/" />
+    <meta property="og:title" content="Campeonato Brasileiro de Pixelmon 2" />
+    <meta property="og:description" content="Tabela de Pontuação do Campeonato Brasileiro de Pixelmon 2" />
+    <meta property="og:image" content="https://cdn.discordapp.com/attachments/997165633567473674/1000148480842543296/unknown.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://cbp2.guiki.pt/" />
+    <meta property="twitter:title" content="Campeonato Brasileiro de Pixelmon 2" />
+    <meta property="twitter:description" content="Tabela de Pontuação do Campeonato Brasileiro de Pixelmon 2" />
+    <meta property="twitter:image" content="https://cdn.discordapp.com/attachments/997165633567473674/1000148480842543296/unknown.png" />
+    
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+        #iframeContainer {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="iframeContainer">
+        <iframe src="https://lookerstudio.google.com/embed/reporting/cbd84259-276a-4b65-94aa-f8e5f0bcc166/page/IpQYD" allowfullscreen></iframe>
+    </div>
+
+
+    <script>
+        window.onload = function() {
+            var iframe = document.querySelector("iframe");
+            var iframeContentDocument = iframe.contentDocument || iframe.contentWindow.document;
+
+            // List of selectors for elements you want to hide
+            var selectorsToHide = [
+                "div.embedding-footer",
+                "a.mat-mdc-tooltip-trigger",
+                "div.fullscreen-icon"
+                // Add more selectors if needed
+            ];
+
+            // Loop through each selector and hide the matching elements
+            selectorsToHide.forEach(function(selector) {
+                var elementsToHide = iframeContentDocument.querySelectorAll(selector);
+                if (elementsToHide) {
+                    for (var i = 0; i < elementsToHide.length; i++) {
+                        elementsToHide[i].style.display = "none"; // Hide the element
+                    }
+                }
+            });
+
+            // Change the content from "Looker Studio" to "Campeonato Brasileiro de Pixelmon 2"
+            var linkElement = iframeContentDocument.querySelector("a._ngcontent-ng-c2411666910[target='_blank'][class='mat-mdc-tooltip-trigger branding-info']");
+            if (linkElement) {
+                linkElement.removeAttribute("href");
+                linkElement.querySelector("div.app-name").textContent = "Campeonato Brasileiro de Pixelmon 2";
+            }
+        };
+    </script>
+
+    
+</body>
+</html>
