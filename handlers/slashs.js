@@ -4,13 +4,11 @@ const colors = require('colors/safe');
 const hooker = require('../functions/hooker');
 
 module.exports = async function (client) {
-    const readdirAsync = promisify(fs.readdir);
-
     try {
-        const slashFolders = await readdirAsync(__dirname + '/../commands/slashs');
+        const slashFolders = await fs.readdirSync(__dirname + '/../commands/slashs');
 
         for (const folder of slashFolders) {
-            const slashFiles = await readdirAsync(__dirname + `/../commands/slashs/${folder}`);
+            const slashFiles = await fs.readdirSync(__dirname + `/../commands/slashs/${folder}`).filter(file => file.endsWith('.js'));;
             for (const file of slashFiles) {
                 const slashPath = __dirname + `/../commands/slashs/${folder}/${file}`;
                 try {

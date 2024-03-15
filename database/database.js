@@ -3,6 +3,7 @@ const Database = require('better-sqlite3')(__dirname + '/database.db');
 const mysql = require('mysql2/promise');
 const schedule = require('node-schedule');
 const hooker = require('../functions/hooker');
+const fs = require('fs');
 
 let mysqlConnection;
 
@@ -41,6 +42,9 @@ async function establishMySQLConnection(client) {
       user: process.env.MysqlUser,
       password: process.env.MysqlPassword,
       database: process.env.MysqlDatabase,
+      ssl: {
+        ca: fs.readFileSync(__dirname + '/certs/ca-cert.pem'),
+      },
     });
   } catch (error) {
     await hooker.commandErrorHooker(client, 'database.js', 'Connecting to mysql database.', error);
