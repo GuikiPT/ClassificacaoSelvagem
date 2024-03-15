@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  cbp2-bot:
+    container_name: ClassSelvagem-Bot
+    image: "node:18"
+    working_dir: /workspace/node/classselvagem
+    restart: always
+    env_file:
+      - .env 
+    volumes:
+      - ./:/workspace/node/classselvagem
+    command: "npm run docker-run"
